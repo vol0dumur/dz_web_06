@@ -4,7 +4,7 @@ from connect import create_connection
 import logging
 
 
-SQL_DIR = "C:\\Documents\\enic\\My_repo\\2025-06\\2025-06-18\\sql"
+SQL_DIR = "sql"
 
 
 def read_sql_files(directory: str):
@@ -55,6 +55,7 @@ def execute_sql_query(sql_query: str) -> str:
     
 
 def split_query(query):
+    """Розділяє SQL-запит на коментар і безпосередньо запит."""
 
     return query[2:query.find("\n")].strip(), query[query.find("\n")+1:]
     
