@@ -65,6 +65,8 @@ if __name__ == "__main__":
     for query in read_sql_files(SQL_DIR):
 
         if query.startswith("--"):
-
             comment, query = split_query(query)
-            print(f"* * *\n{comment}\n{execute_sql_query(query)}\n")
+        else:
+            comment = ""
+            
+        print(f"* * *\n{comment}\n{execute_sql_query(query)}\n")
