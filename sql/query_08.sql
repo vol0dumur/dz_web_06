@@ -1,4 +1,4 @@
--- Для викладача з id = 3
+-- Знайти середній бал, який ставить певний викладач зі своїх предметів. Для викладача з id = 3
 SELECT t.full_name, ROUND(AVG(g.grade), 2) AS avg_grade
 FROM grades g
 JOIN subjects sub ON g.subject_id = sub.id

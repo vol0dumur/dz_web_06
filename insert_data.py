@@ -87,6 +87,7 @@ def insert_data():
 
             conn.commit()
             cur.close()
+            
             print("Дані успішно додані!")
 
     except DatabaseError as e:

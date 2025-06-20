@@ -1,4 +1,4 @@
--- Для групи з id = 1 і предмета з id = 2
+-- Знайти оцінки студентів у окремій групі з певного предмета. Для групи з id = 1 і предмета з id = 2
 SELECT s.full_name, g.grade, g.grade_date
 FROM grades g
 JOIN students s ON g.student_id = s.id

@@ -1,4 +1,4 @@
--- Для предмету з id = 5
+-- Знайти середній бал у групах з певного предмету. Для предмету з id = 5
 SELECT gr.name AS group_name, ROUND(AVG(g.grade), 2) AS avg_grade
 FROM grades g
 JOIN students s ON g.student_id = s.id
