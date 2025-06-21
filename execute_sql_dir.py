@@ -57,16 +57,15 @@ def execute_sql_query(sql_query: str) -> str:
 def split_query(query):
     """Розділяє SQL-запит на коментар і безпосередньо запит."""
 
-    return query[2:query.find("\n")].strip(), query[query.find("\n")+1:]
+    if query.startswith("--"):
+        return query[2:query.find("\n")].strip(), query[query.find("\n")+1:]
+    else:
+        return "Запит не містить коментаря.", query
     
 
 if __name__ == "__main__":
 
     for query in read_sql_files(SQL_DIR):
-
-        if query.startswith("--"):
-            comment, query = split_query(query)
-        else:
-            comment = ""
-            
+        
+        comment, query = split_query(query)            
         print(f"* * *\n{comment}\n{execute_sql_query(query)}\n")
